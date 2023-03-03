@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style2.css" rel="stylesheet" type="text/css"> 
+    <title>Word Counter</title>
+</head>
+<body>
+
+   <div class="container">
+    <div class="box">
+        <textarea id="input" rows="15" cols="30"></textarea>
+        <br>
+        </div>
+<div class="button">
+    <button class="btn" onclick="count()">
+        Count Words
+    </button>
+</div>
+<br>
+
+<h2>The Number Of Words Are:<p id="output"></p></h2>
+<h2>The Number Of Characters Are:<p id="output2"></p></h2>
+    </div>
+    
+   </div>
+<script>
+    function count()
+    {
+        console.log("helo");
+    var sen=document.getElementById("input").value;
+    var len=sen.length;
+    if(sen=="")
+    {
+        document.getElementById("output").innerText=0;
+        return;
+    }
+    var words=sen.trim().split(" ").length;
+    console.log(words);
+    console.log(sen);
+    document.getElementById("output").innerText=words;
+    document.getElementById("output2").innerText=len;
+    document.getElementById("input").value="";
+    }
+</script>
+    
+</body>
+</html>
