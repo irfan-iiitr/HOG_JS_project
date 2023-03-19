@@ -23,6 +23,8 @@ btns.forEach((btn)=>{
         display.value+="";
         else if(str.charAt(str.length-1)==="/" && (btn.id==="+" || btn.id==="-" || btn.id==="/" || btn.id==="*"))
         display.value+="";
+        else if(str.charAt(str.length-1)==="." && (btn.id==="+" || btn.id==="-" || btn.id==="/" || btn.id==="*" || btn.id==="."))
+        display.value+="";
         else
         display.value+=btn.id;
         }
