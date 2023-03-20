@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h2 class="new" onClick="window.location.reload();"><center>New Game</center></h2>
-        <h3 class="heading">Player 1-X &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Player 2-0</h3>
+        <h3 class="heading">Player 1-X <k>Player 2-0</k></h3>
         <div class="box">
             <button class="1" onclick="check(0)"></button>
             <button class="2"onclick="check(1)" ></button>
@@ -36,7 +36,7 @@
         const a=[10,20,30,40,50,60,70,80,90];
         btns.forEach((btn)=>{
         btn.addEventListener("click", () => {
-       
+
             if(c%2===0){
             btn.style.backgroundImage="url(cross.png)";
             btn.style.backgroundSize="cover";
@@ -52,7 +52,7 @@
             c++;
 
         });
-    
+
 });
 
 function check(n){
@@ -63,6 +63,7 @@ function check(n){
 
     console.log(a);
     checkWinner();
+
 };
 
 function checkWinner(){
@@ -70,31 +71,45 @@ function checkWinner(){
     if(a[0]===a[1] && a[0]===a[2])
     res.innerHTML=a[0]+" wins";
 
-    if(a[3]===a[4] && a[3]===a[5])
+    else  if(a[3]===a[4] && a[3]===a[5])
     res.innerHTML=a[3]+" wins";
 
-    if(a[6]===a[7] && a[6]===a[8])
+    else if(a[6]===a[7] && a[6]===a[8])
     res.innerHTML=a[6]+" wins";
 
-    if(a[0]===a[3] && a[0]===a[6])
+    else if(a[0]===a[3] && a[0]===a[6])
     res.innerHTML=a[0]+" wins";
 
-    if(a[1]===a[4] && a[1]===a[7])
+    else if(a[1]===a[4] && a[1]===a[7])
     res.innerHTML=a[1]+" wins";
 
-    if(a[2]===a[5] && a[2]===a[8])
+    else if(a[2]===a[5] && a[2]===a[8])
     res.innerHTML=a[2]+" wins";
 
-    if(a[0]===a[4] && a[0]===a[8])
+    else if(a[0]===a[4] && a[0]===a[8])
     res.innerHTML=a[0]+" wins";
 
-    if(a[2]===a[4] && a[2]===a[6])
+    else if(a[2]===a[4] && a[2]===a[6])
     res.innerHTML=a[2]+" wins";
+
+    else
+    checkdraw();
+}
+
+function checkdraw(){
+    let pa=0,pb=0;
+    for (let i = 0; i < 9; i++) {
+      if(a[i]===1)
+      pa++;
+      else if(a[i]===2)
+      pb++;
+}
+if((pa+pb)===9)
+res.innerHTML="Draw";
 }
 
 
-
     </script>
-    
+
 </body>
 </html>
